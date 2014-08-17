@@ -39,9 +39,7 @@ module CucumberMonitor
 
     def search_and_include_features(dir_entries, collection=[])
       dir_entries.each do |entrie|
-        if entrie.include?('.feature')
           collection << entrie
-        end
       end
       collection
     end
