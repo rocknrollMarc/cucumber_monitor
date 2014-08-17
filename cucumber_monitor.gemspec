@@ -7,15 +7,15 @@ require "cucumber_monitor/version"
 Gem::Specification.new do |s|
   s.name = 'cucumber_monitor'
   s.version = CucumberMonitor::VERSION
-  s.authors = ["David William"]
+  s.authors = ["Marc Bluemner"]
   s.description = 'Visualization and manipulation of cucumber features.'
   s.summary = "Puts your features in a highlighted position. Adds a dashboard for viewing, searching and better identification of yours scenarios and steps."
-  s.email = 'david@webhall.com.br'
-  s.homepage = "https://github.com/davidwilliam/cucumber_monitor"
+  s.email = 'marc.bluemner@gmail.com'
+  s.homepage = "https://github.com/rocknrollmarc/cucumber_monitor"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", "~> 3.2.3"
-  s.add_dependency 'cucumber-rails', '>= 1.1.1'
+  s.add_dependency "rails"
+  s.add_dependency 'cucumber-rails'
 end
