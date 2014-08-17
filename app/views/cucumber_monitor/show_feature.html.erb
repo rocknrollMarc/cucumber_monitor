@@ -12,7 +12,7 @@
 
 <% if @feature.contexts.any? %>
 <div class="feature_container context">
-  <% cache Digest::SHA1.hexigest(@feature.contexts).each do |context|%>
+  <% @feature.contexts.each do |context|%>
     <h4><%= t(".background") %></h4>
     <div class="steps">
       <% context.steps.each do |step| %>
