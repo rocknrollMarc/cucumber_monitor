@@ -8,7 +8,7 @@ module CucumberMonitor
     end
 
     def self.features_path
-      "#{path}/features"
+      "#{path}"
     end
 
     def self.step_definitions_path
