@@ -26,7 +26,7 @@ module CucumberMonitor
 
     def files
       collection = []
-      dir_entries = Dir.entries(self.class.features_path)
+      dir_entries = Dir.entries(self.class.features_path).to_s
       search_and_include_features(dir_entries.to_s)
     end
 
