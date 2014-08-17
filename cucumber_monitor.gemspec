@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.email = 'marc.bluemner@gmail.com'
   s.homepage = "https://github.com/rocknrollmarc/cucumber_monitor"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails"
