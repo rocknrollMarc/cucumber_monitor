@@ -18,6 +18,7 @@ module CucumberMonitor
 
 if ENV['nuke']
   feature_dir = "#{Rails.root.to_s/repos/send_and_store/nuke}"
+end
   
   def self.new
     CucumberMonitor::Base.new
