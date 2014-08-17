@@ -16,15 +16,16 @@ require 'cucumber_monitor/feature_runner'
 module CucumberMonitor
 
 
-if ENV['nuke']
-  feature_dir = "#{Rails.root.to_s/repos/send_and_store/nuke}"
-end
+
   
   def self.new
     CucumberMonitor::Base.new
   end
 
   def self.path
+    if ENV['nuke']
+      feature_dir = "#{Rails.root.to_s/repos/send_and_store/nuke}"
+  else
     (Rails.root.to_s if defined?(Rails)) || "#{CucumberMonitor::Engine.root}#{feature_dir}"
   end
 
