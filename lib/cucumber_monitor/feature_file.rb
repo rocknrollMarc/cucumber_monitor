@@ -11,7 +11,7 @@ module CucumberMonitor
     end
 
     def name
-      file[0..9]
+      file[0..-9]
     end
 
     def lines
