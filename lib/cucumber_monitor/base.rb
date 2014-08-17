@@ -8,8 +8,7 @@ module CucumberMonitor
     end
 
     def self.features_path
-      the_dir = Dir.pwd + '/repos/' + 'send_and_store/nuke'
-      Dir.glob("#{the_dir}/feat*/**/*.feature")
+      "#{path}"
     end
 
     def self.step_definitions_path
@@ -26,8 +25,8 @@ module CucumberMonitor
 
     def files
       collection = []
-      dir_entries = Dir.entries(self.class.features_path).to_s
-      search_and_include_features(dir_entries.to_s)
+      dir_entries = Dir.entries(self.class.features_path)
+      search_and_include_features(dir_entries)
     end
 
     def step_definitions_files
@@ -39,8 +38,10 @@ module CucumberMonitor
 
     def search_and_include_features(dir_entries, collection=[])
       dir_entries.each do |entrie|
+        if entrie.include?('.feature')
           collection << entrie
         end
+      end
       collection
     end
 
