@@ -24,7 +24,7 @@ module CucumberMonitor
 
   def self.path
     the_dir = Dir.pwd + '/repos/' + 'send_and_store/nuke'
-    feature_dir = Dir.glob("#{the_dir}/feat*/**/*.feature")
+    feature_dir = Dir.glob("#{the_dir}/feat*/**/")
     end
 
   def self.app_test_dir
