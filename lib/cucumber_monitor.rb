@@ -23,12 +23,10 @@ module CucumberMonitor
   end
 
   def self.path
-    if ENV['nuke']
-      feature_dir = "#{Rails.root.to_s}/repos/send_and_store/nuke"
-    else
-    (Rails.root.to_s if defined?(Rails)) || "#{CucumberMonitor::Engine.root}#{feature_dir}"
+    the_dir = Dir.pwd + '/repos/' + @project.repo_dir + '/nuke'
+    feature_dir = Dir.glob("#{the_dir}/feat*/**/*.feature")
+    "#{feature_dir}"
     end
-  end
 
   def self.app_test_dir
     "/test/dummy" if Rails.env == 'test'
@@ -42,5 +40,4 @@ module CucumberMonitor
             ]
     files.all? { |f| File.exist?(f) } && YAML.load_file("#{path}/config/database.yml").has_key?("cucumber")
   end
-
 end
