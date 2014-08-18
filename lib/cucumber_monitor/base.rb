@@ -23,7 +23,8 @@ module CucumberMonitor
       "Printing: #{I18n.t("feature")}"
     end
 
-    def files(path)
+    def files
+      path = Dir.pwd + /repo/ + "send_and_store/nuke/"
       dir_entries = []
       Dir.glob("#{path}/feat**/**/*.feature"). each do |each_feature|
         dir_entries << each_feature
