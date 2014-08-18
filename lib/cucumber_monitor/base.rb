@@ -8,7 +8,7 @@ module CucumberMonitor
     end
 
     def self.features_path
-      "#{path}"
+      "#{path}/features"
     end
 
     def self.step_definitions_path
@@ -25,8 +25,12 @@ module CucumberMonitor
 
     def files
       collection = []
-      dir_entries = Dir.entries(self.class.features_path)
-      search_and_include_features(dir_entries)
+      Dir.glob("#{path}/feat**/**/*.feature"). each do |each_feature|
+        search_and_include_features(each_feature)
+      end
+      
+
+      
     end
 
     def step_definitions_files
