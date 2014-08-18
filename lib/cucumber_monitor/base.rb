@@ -23,7 +23,7 @@ module CucumberMonitor
       "Printing: #{I18n.t("feature")}"
     end
 
-    def files
+    def files(path)
       dir_entries = []
       Dir.glob("#{path}/feat**/**/*.feature"). each do |each_feature|
         dir_entries << each_feature
