@@ -24,13 +24,11 @@ module CucumberMonitor
     end
 
     def files
-      collection = []
+      dir_entries = []
       Dir.glob("#{path}/feat**/**/*.feature"). each do |each_feature|
-        search_and_include_features(each_feature)
+        dir_entries << each_feature
       end
-      
-
-      
+      search_and_include_features(dir_entries)
     end
 
     def step_definitions_files
